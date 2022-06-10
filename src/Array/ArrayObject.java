@@ -1,7 +1,5 @@
 package Array;
 
-import Student.Student;
-
 public class ArrayObject {
 	
 	public static void main(String[] args) {

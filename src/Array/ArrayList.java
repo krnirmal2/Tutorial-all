@@ -1,7 +1,5 @@
 package Array;
 
-import java.util.Comparator;
-
 public class ArrayList {
 	
 	public static void main(String[] args) {

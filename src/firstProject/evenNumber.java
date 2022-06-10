@@ -1,7 +1,7 @@
 package firstProject;
 
 public class evenNumber {
-	int[] evenNumber(int num) {
+	static int[] evenNumber(int num) {
 		int []arr= new int[num] ;
 		int i=0;
 		while(num>=0) {
