@@ -30,6 +30,10 @@ public class object {
 					
 		
 	}
+
+    public static int hash(int roll) {
+        return 0;
+    }
 	
 	
 
