@@ -2,10 +2,10 @@ package Student;
 
 public class Student {
 	//instance attributes or properties of student but not class attribute
-	String name;
-	char gender;
-	int Roll;
-	float marks;
+	public String name;
+	public char gender;
+	public int Roll;
+	public float marks;
 	
 	//now for count the no. of object created by the user we need static keyword 
 	// which helps to remain the value through out program and it not lived inside 
@@ -22,7 +22,7 @@ public class Student {
 //	}
 	
 	//parameterised constructor and a default this parameter
-	Student(String name, char gender, int roll, float marks){
+	public Student(String name, char gender, int roll, float marks){
 		this.name = name;
 		this.gender = gender;
 		this.Roll = roll ;
@@ -44,7 +44,7 @@ public class Student {
 	
 	//internally getdetails will call like 
 	//String getDetails(Student this)
-	String getDetails() {
+	public String getDetails() {
 //		String result ="";
 //		result = "name : "+ this.name +"\n"+
 //				 "Gender : "+ this.gender+"\n"+
@@ -82,5 +82,31 @@ public class Student {
     	}
     	 return grade;
     }
+// below code is used for the  check the two values are equal based
+// on the hashcode contains addresses thats why it check between the two objects and then 
+// also compare the value in side the object 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Roll;
+		return result;
+		// return object.hash(Roll);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null)return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		// return Roll = other.Roll;
+		if (Roll != other.Roll)
+			return false;
+		return true;
+	}
+
+
 	
 }
