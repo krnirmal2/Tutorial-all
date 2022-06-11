@@ -1,0 +1,17 @@
+1. open a folder 
+2. git init 
+3. git status
+4. git config --global user.name "krnirmal2"
+5. git config --global user.email "nirmalkrmajhi14@gmail.com"
+6. git add .
+7. git commit -m "massage"
+8. git remote add origin https://github.com/krnirmal2/Tutorial-all.git
+9. git push -u origin main
+10. git status
+
+
+11. git branch day4
+12. git checkout day4
+13. git branch -v 
+14. git 
+
