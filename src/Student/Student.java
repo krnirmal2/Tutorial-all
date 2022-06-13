@@ -1,5 +1,7 @@
 package Student;
 
+import Student.Address.address;
+
 public class Student {
 	//instance attributes or properties of student but not class attribute
 	public String name;
@@ -23,11 +25,21 @@ public class Student {
 	
 	//parameterised constructor and a default this parameter
 	public Student(String name, char gender, int roll, float marks){
+		// this.name = name;
+		// this.gender = gender;
+		// this.Roll = roll ;
+		// this.marks = marks;
+		// Student.count++;
+		a
+		
+	}
+	public Student(String name, char gender, int roll, float marks,address address){
 		this.name = name;
 		this.gender = gender;
 		this.Roll = roll ;
 		this.marks = marks;
 		Student.count++;
+		address.getdetails();
 		
 	}
 	

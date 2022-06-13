@@ -9,6 +9,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import Student.Student;
+import Student.Address.address;
 
 public class LIstoperation {
     
@@ -73,7 +74,7 @@ public class LIstoperation {
     //    separated who have scored more than 80 marks
 
     List<Student> students = Arrays.asList(
-    new Student("nirmal",'f',4,59),
+    new Student("nirmal",'f',4,59, new address("mumbai", 12, "d", "l")),
     new Student("nirmal",'m',4,99) );
 
     String s = students.stream().filter(element->element.marks>80).map(
@@ -104,5 +105,16 @@ public class LIstoperation {
    Map<Boolean,List<Student>> partition_marks= students.stream().collect(Collectors.partitioningBy(element->element.marks>=59));
 
    System.out.println(partition_marks);
+
+
+   //print the names of all students comma separated as a string who belong to the USA country
+
+
+
+   students.stream().filter(element-> element.isAddressPrensent() && element.getAddress().getcountry().equals
+   map(element->element.name)
+   .collect(Collectors.joining(",")));
+
+
 }
 }
