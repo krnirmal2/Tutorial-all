@@ -80,7 +80,7 @@ public class Student {
 		if(this.marks<0 || this.marks>100) {
     		grade ='I';
     	}
-    	if(this.marks>=70) {
+    	if(this.marks>=80) {
     		grade ='A';
     	}
     	else if(this.marks>=60){
