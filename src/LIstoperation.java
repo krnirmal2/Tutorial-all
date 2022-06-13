@@ -1,12 +1,15 @@
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import Student.Student;
+import Student.Address.address;
 
 public class LIstoperation {
     
@@ -71,12 +74,47 @@ public class LIstoperation {
     //    separated who have scored more than 80 marks
 
     List<Student> students = Arrays.asList(
-    new Student("nirmal",'m',4,59),
+    new Student("nirmal",'f',4,59, new address("mumbai", 12, "d", "l")),
     new Student("nirmal",'m',4,99) );
 
     String s = students.stream().filter(element->element.marks>80).map(
         element->element.name).collect(Collectors.joining(","));
     System.out.println(s);
 
-    }
+    
+
+
+    //find the average marks scord by all the students
+    //
+    double averageMarks = students.stream().collect(Collectors.averagingDouble(element->element.marks));
+    
+    System.out.println(averageMarks);
+    // statistically data student
+    DoubleSummaryStatistics d =students.stream().collect(Collectors.summarizingDouble(element->element.marks));
+    
+    System.out.println(d);
+
+
+    Map<Character, List<Student>> mapGender = students.stream().collect(Collectors.groupingBy(element->element.gender));
+    System.out.println(mapGender);
+
+    // fromt he abohve student list make two groups of Students
+    // 1. Scored more than or equal 59 marks
+    //2. scored less than 80 marks
+
+   Map<Boolean,List<Student>> partition_marks= students.stream().collect(Collectors.partitioningBy(element->element.marks>=59));
+
+   System.out.println(partition_marks);
+
+
+   //print the names of all students comma separated as a string who belong to the USA country
+
+
+
+   students.stream().filter(element-> element.isAddressPrensent() && element.getAddress().getcountry().equals
+   map(element->element.name)
+   .collect(Collectors.joining(",")));
+
+
+}
 }

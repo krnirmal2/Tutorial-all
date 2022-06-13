@@ -15,3 +15,5 @@
 13. git branch -v 
 14. git 
 
+git push --set-upstream origin day5
+
